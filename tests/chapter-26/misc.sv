@@ -3,12 +3,24 @@
 // 26.6
 package p1;
   int x, y;
+  int Foobar;
+  int PARAM;
 endpackage
 package p2;
   import p1::x;
 //^^^^^^ keyword.control.import.sv
 //       ^^ entity.name.namespace.sv
 //           ^ entity.name.function.sv
+
+  import p1::Foobar;
+//^^^^^^ keyword.control.import.sv
+//       ^^ entity.name.namespace.sv
+//           ^^^^^^ entity.name.function.sv
+
+  import p1::PARAM;
+//^^^^^^ keyword.control.import.sv
+//       ^^ entity.name.namespace.sv
+//           ^^^^^ variable.other.constant.sv
 
   export p1::*;  // exports p1::x as the name "x";
 //^^^^^^ keyword.control.export.sv

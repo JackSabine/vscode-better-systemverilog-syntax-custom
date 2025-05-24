@@ -1,21 +1,21 @@
 {
-  "name": "better-systemverilog-syntax",
-  "displayName": "Better SystemVerilog Syntax",
+  "name": "better-systemverilog-syntax-fork-4-pascal-case",
+  "displayName": "Better SystemVerilog Syntax (PascalCase friendly)",
   "version": "1.0.2",
-  "description": "Better syntax highlighting for SystemVerilog",
+  "description": "Better syntax highlighting for SystemVerilog (PascalCase friendly)",
   "categories": [
     "Programming Languages"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/hankhsu1996/vscode-better-systemverilog-syntax"
+    "url": "https://github.com/JackSabine/vscode-better-systemverilog-syntax-fork-4-pascal-case"
   },
   "license": "MIT",
   "author": {
     "name": "Shou-Li Hsu",
     "email": "hank850503@gmail.com"
   },
-  "publisher": "hankhsu1996",
+  "publisher": "JackSabine",
   "scripts": {
     "build": "ts-node src/index.ts",
     "package": "npm run build && vsce package",

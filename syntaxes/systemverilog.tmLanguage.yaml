@@ -1334,12 +1334,12 @@ repository:
           # This section handles declarations that could be parameters, functions/tasks, data types, or classes.
           # Unfortunately, without semantic analysis, it's not possible to distinguish between them accurately.
           # In this extension, we use naming conventions to make educated guesses:
-          # - If the identifier starts with a capital letter, it's likely a parameter.
+          # - If the identifier is all-caps, it's likely a parameter.
           # - If the identifier starts with "t_" or ends with "_t", it's likely a data type.
           # - Otherwise, it's likely a function/task.
           "3":
             patterns:
-              - match: \b([A-Z][a-zA-Z0-9_$]*)\b\s*
+              - match: \b([A-Z][A-Z0-9_$]*)\b\s*
                 captures:
                   "1": { name: variable.other.constant.sv }
               - match: \b(t_[a-zA-Z0-9_]*|.*_t)\b\s*
@@ -6561,7 +6561,7 @@ repository:
       # Two special identifier for type casting:
       # 1. If the identifier starts with an uppercase letter, we guess it is a parameter name
       # 2. Otherwise, we guess it is a type name
-      - match: (\b[A-Z][a-zA-Z0-9_\$]*)\s*(?=\')
+      - match: (\b[A-Z][A-Z0-9_\$]*)\s*(?=\')
         captures:
           "1": { name: variable.other.constant.sv }
       - match: (${simpleIdentifier})\s*(?=\')
@@ -6615,7 +6615,7 @@ repository:
       # Two special identifier for type casting:
       # 1. If the identifier starts with an uppercase letter, we guess it is a parameter name
       # 2. Otherwise, we guess it is a type name
-      - match: (\b[A-Z][a-zA-Z0-9_\$]*)\s*(?=\')
+      - match: (\b[A-Z][A-Z0-9_\$]*)\s*(?=\')
         captures:
           "1": { name: variable.other.constant.sv }
       - match: (${simpleIdentifier})\s*(?=\')
@@ -7011,7 +7011,7 @@ repository:
       - match: (?<=\.)\b(num|size|delete|exists|first|last|next|prev|insert|pop_front|pop_back|push_front|push_back|find|find_index|find_first|find_first_index|find_last|find_last_index|min|max|unique|unique_index|reverse|sort|rsort|shuffle|sum|product|and|or|xor|index|randomize|pre_randomize|post_randomize|rand_mode|constraint_mode|srandom|get_randstate|set_randstate)\b(?!\s*\=)
         captures:
           "1": { name: entity.name.function.sv }
-      - match: \b([A-Z][a-zA-Z0-9_$]*)\b\s*${identifierEnd}
+      - match: \b([A-Z][A-Z0-9_$]*)\b\s*${identifierEnd} # FIXME
         captures:
           "1": { name: variable.other.constant.sv }
       - match: \b(t_[a-zA-Z0-9_]*|[a-zA-Z0-9_]*_t)\b\s*(?!\s*\()

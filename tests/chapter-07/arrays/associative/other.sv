@@ -23,6 +23,6 @@ typedef struct {
 // The grammar does not provide a way to distinguish between a parameter and a class type, so semantic analysis is needed.
 
 int arr [ Unpkt ];
-//        ^^^^^ variable.other.constant.sv
+//        ^^^^^ variable.other.sv
 
 endmodule
